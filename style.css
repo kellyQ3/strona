@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animation Classes */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Grafiki kart projektow — zachowuja ciemny styl i gradienty */
+.project-art { isolation: isolate; background-color: #111827; }
+.project-art::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .9; }
+.project-art-gwent::before { background: radial-gradient(ellipse at 50% 35%, rgba(16,185,129,.28), transparent 48%), linear-gradient(135deg, #172b2a, #111827 58%, #28331f); }
+.project-art-horror::before { background: radial-gradient(ellipse at 70% 30%, rgba(139,92,246,.34), transparent 45%), linear-gradient(135deg, #1e1735, #090b14 62%, #25203b); }
+.project-art-next::before { background: radial-gradient(ellipse at 25% 30%, rgba(59,130,246,.28), transparent 45%), linear-gradient(135deg, #17233a, #0b1020 65%, #1b2140); }
+.project-symbol { color: rgba(226,232,240,.88); font-family: Georgia, serif; font-size: clamp(3.5rem, 8vw, 5.5rem); text-shadow: 0 0 36px rgba(129,140,248,.38); transition: transform .45s ease, text-shadow .45s ease; }
+.group:hover .project-symbol { transform: scale(1.1) translateY(-3px); text-shadow: 0 0 44px rgba(129,140,248,.6); }
+
+/* KELLY portfolio: strona startowa i rozbudowane sekcje projektów */
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+.portfolio-home { min-height: 100vh; padding-top: 132px; padding-bottom: 42px; display: flex; align-items: center; }
+.kelly-brand { text-align: center; margin: 0 auto 46px; }
+.kelly-eyebrow, .section-heading > span, .project-index { color: #818cf8; font: 600 .72rem 'JetBrains Mono', monospace; letter-spacing: .22em; }
+.kelly-brand h1 { font-size: clamp(5rem, 15vw, 10.5rem); line-height: .95; font-weight: 800; letter-spacing: -.085em; color: #f8fafc; margin: 12px 0 18px; text-shadow: 0 0 55px rgba(99,102,241,.2); }
+.kelly-brand h1 span { color: #818cf8; }
+.kelly-brand p { color: #94a3b8; font-size: clamp(.95rem, 2vw, 1.15rem); }
+.project-shortcuts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.shortcut-card { position: relative; min-height: 235px; padding: 25px; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; text-decoration: none; transition: transform .25s ease,border-color .25s ease,background .25s ease; }
+.shortcut-card:hover { transform: translateY(-6px); border-color: rgba(165,180,252,.35); }
+.shortcut-card::before { content: ''; position: absolute; inset: 0; opacity: .9; pointer-events: none; }
+.shortcut-gwent::before { background: radial-gradient(ellipse at 80% 15%,rgba(16,185,129,.23),transparent 55%),linear-gradient(140deg,rgba(16,45,42,.55),transparent); }
+.shortcut-horror::before { background: radial-gradient(ellipse at 80% 15%,rgba(139,92,246,.3),transparent 55%),linear-gradient(140deg,rgba(34,20,54,.7),transparent); }
+.shortcut-next::before { background: radial-gradient(ellipse at 80% 15%,rgba(59,130,246,.25),transparent 55%),linear-gradient(140deg,rgba(24,39,68,.65),transparent); }
+.shortcut-card > * { position: relative; }
+.shortcut-number { color: #a5b4fc; font: .68rem 'JetBrains Mono',monospace; letter-spacing: .12em; margin-bottom: auto; }
+.shortcut-icon { position: absolute; right: 24px; top: 42px; color: rgba(226,232,240,.85); font: 4.2rem Georgia,serif; text-shadow: 0 0 30px rgba(129,140,248,.35); }
+.shortcut-card strong { max-width: 85%; color: #f8fafc; font-size: clamp(1.15rem,2vw,1.55rem); line-height: 1.2; margin-bottom: 9px; }
+.shortcut-desc { color: #94a3b8; font-size: .86rem; }
+.shortcut-arrow { position: absolute; right: 24px; bottom: 24px; color: #a5b4fc; font-size: 1.4rem; transition: transform .2s; }
+.shortcut-card:hover .shortcut-arrow { transform: translate(3px,3px); }
+.scroll-cue { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 34px; color: #64748b; font: .67rem 'JetBrains Mono',monospace; letter-spacing: .12em; text-decoration: none; }
+.scroll-cue span { color: #a5b4fc; font-size: 1.2rem; }
+.project-details { padding-top: 75px; padding-bottom: 70px; background: rgba(15,23,42,.22); }
+.section-heading { margin-bottom: 34px; }
+.section-heading h2 { margin-top: 8px; color: #f8fafc; font-size: clamp(2.5rem,5vw,4rem); font-weight: 750; letter-spacing: -.06em; }
+.project-detail { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: clamp(26px,5vw,64px); padding: clamp(18px,3vw,32px); margin-bottom: 30px; border-radius: 24px; scroll-margin-top: 105px; }
+.project-gallery { min-width: 0; }
+.gallery-main { display: none; position: relative; min-height: 300px; aspect-ratio: 16/10; border-radius: 16px; overflow: hidden; align-items: center; justify-content: center; }
+.gallery-main.is-active { display: flex; }
+.gallery-main::before { z-index: 0; }
+.gallery-mark { position: relative; z-index: 1; font: clamp(5rem,10vw,9rem) Georgia,serif; color: rgba(241,245,249,.88); text-shadow: 0 0 50px rgba(129,140,248,.45); }
+.gallery-caption { position: absolute; z-index: 1; left: 22px; bottom: 20px; color: #e2e8f0; font: .65rem 'JetBrains Mono',monospace; letter-spacing: .12em; }
+.gallery-controls { display: flex; align-items: center; justify-content: space-between; padding: 13px 0; color: #64748b; font: .7rem 'JetBrains Mono',monospace; }
+.gallery-controls button { width: 38px; height: 34px; border: 1px solid rgba(255,255,255,.1); border-radius: 9px; background: rgba(255,255,255,.04); color: #e2e8f0; cursor: pointer; transition: background .2s; }
+.gallery-controls button:hover { background: rgba(99,102,241,.25); }
+.gallery-thumbs { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.gallery-thumb { padding: 10px 8px; border: 1px solid rgba(255,255,255,.07); border-radius: 9px; background: rgba(255,255,255,.025); color: #64748b; text-align: left; font: .68rem 'JetBrains Mono',monospace; cursor: pointer; }
+.gallery-thumb span { display: block; margin-top: 4px; font: .75rem Inter,sans-serif; color: #94a3b8; }
+.gallery-thumb.active { border-color: rgba(129,140,248,.5); background: rgba(99,102,241,.12); color: #c7d2fe; }
+.project-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 10px 0; }
+.project-copy h3 { margin: 13px 0 15px; color: #f8fafc; font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.1; font-weight: 750; letter-spacing: -.05em; }
+.project-copy > p:not(.project-note) { color: #94a3b8; line-height: 1.8; font-size: .96rem; }
+.tech-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 23px 0; }
+.tech-list span { padding: 7px 10px; border: 1px solid rgba(129,140,248,.2); border-radius: 7px; background: rgba(99,102,241,.08); color: #c7d2fe; font: .72rem 'JetBrains Mono',monospace; }
+.project-link { display: inline-flex; align-items: center; gap: 24px; padding: 12px 16px; border-radius: 10px; background: #4f46e5; color: white; font-size: .88rem; text-decoration: none; transition: background .2s; }
+.project-link:hover { background: #6366f1; }
+.project-link span { font-size: 1.1rem; }
+.project-note { margin-top: 15px; color: #64748b; font-size: .78rem; line-height: 1.6; }
+@media (max-width: 800px) { .portfolio-home { padding-top: 115px; } .project-shortcuts { grid-template-columns: 1fr; } .shortcut-card { min-height: 175px; } .project-detail { grid-template-columns: 1fr; } .gallery-main { min-height: 240px; } .project-copy { padding-top: 5px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

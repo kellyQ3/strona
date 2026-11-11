@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KELLY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#020617', // Custom dark background
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+
+    <!-- Background Gradient Mesh (Fixed) -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-900/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-mono text-xl font-bold text-white tracking-tighter">
+                        KELLY
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#projects"
+                            class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Projekty</a>
+                        <a href="#contact"
+                            class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Kontakt</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-white/10 focus:outline-none"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="hidden md:hidden glass border-t border-white/5" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#projects"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-white/5">Projekty</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-white/5">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Start: logo KELLY i trzy kafelki prowadzące do projektów -->
+        <section id="about" class="portfolio-home px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="kelly-brand fade-in-up">
+                    <h1>KELLY<span>.</span></h1>
+                    
+                </div>
+                <div class="project-shortcuts">
+                    <a href="#project-bagietson" class="shortcut-card shortcut-horror glass glass-hover">
+                        <span class="shortcut-number">01 / GRA HORROR</span><span class="shortcut-icon">☾</span>
+                        <strong>Five Nights at Bagietson`s</strong><span class="shortcut-desc">Horror i mechaniki przetrwania</span><span class="shortcut-arrow">↘</span>
+                    </a>
+                    <a href="#project-gwent" class="shortcut-card shortcut-gwent glass glass-hover">
+                        <span class="shortcut-number">02 / GRA PRZEGLĄDARKOWA ONLINE</span><span class="shortcut-icon">♜</span>
+                        <strong>Gwint</strong><span class="shortcut-desc">Comming soon</span><span class="shortcut-arrow">↘</span>
+                    </a>
+                    <a href="#project-next" class="shortcut-card shortcut-next glass glass-hover">
+                        <span class="shortcut-number">03 / GRAFIKI KOMPUTEROWE</span><span class="shortcut-icon">＋</span>
+                        <strong>Koszulki</strong><span class="shortcut-desc">Comming soon</span><span class="shortcut-arrow">↘</span>
+                    </a>
+                </div>
+                <a class="scroll-cue" href="#projects">PRZEWIŃ, ABY POZNAĆ PROJEKTY <span>↓</span></a>
+            </div>
+        </section>
+
+        <!-- Szczegółowe sekcje projektów -->
+        <section id="projects" class="project-details px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="section-heading"><span>WYBRANE REALIZACJE</span><h2>Projekty<span class="gradient-text">.</span></h2></div>
+
+                <article id="project-bagietson" class="project-detail glass">
+                    <div class="project-gallery" data-gallery>
+                        <div class="gallery-main project-art project-art-horror gallery-slide is-active"><span class="gallery-mark"><img src="FNAB1.png" alt="screen1"></span><span class="gallery-caption">/ 01 — MENU /</span></div>
+                        <div class="gallery-main project-art project-art-horror gallery-slide"><span class="gallery-mark"><img src="FNAB2.png" alt="screen2"></span><span class="gallery-caption">/ 02 — KAMERY /</span></div>
+                        <div class="gallery-main project-art project-art-horror gallery-slide"><span class="gallery-mark"><img src="FNAB3.png" alt="screen3"></span><span class="gallery-caption">/ 03 — ? /</span></div>
+                        <div class="gallery-controls"><button type="button" data-prev aria-label="Poprzednie zdjęcie">←</button><span data-counter>01 / 03</span><button type="button" data-next aria-label="Następne zdjęcie">→</button></div>
+                        <div class="gallery-thumbs"><button class="gallery-thumb active" data-slide="0">01 <span>Atmosfera</span></button><button class="gallery-thumb" data-slide="1">02 <span>Monitoring</span></button><button class="gallery-thumb" data-slide="2">03 <span>Mechaniki</span></button></div>
+                    </div>
+                    <div class="project-copy"><span class="project-index">PROJEKT 01 / UKOŃCZONY - 2026</span><h3>Five Nights at Bagietson`s</h3><p>Comming soon</p><div class="tech-list"><span>GDevelop 5</span><span>Eventy</span><span>Game design</span><span>Grafika 2D</span></div>
+                    <p class="project-note">Comming soon</p></div>
+                </article>
+                <article id="project-gwent" class="project-detail glass">
+                    <div class="project-gallery" data-gallery>
+                        <div class="gallery-main project-art project-art-gwent gallery-slide is-active"><span class="gallery-mark">♜</span><span class="gallery-caption">/ 01 — KONCEPCJA GRY</span></div>
+                        <div class="gallery-main project-art project-art-gwent gallery-slide"><span class="gallery-mark">⚔</span><span class="gallery-caption">/ 02 — MECHANIKI I TURY</span></div>
+                        <div class="gallery-main project-art project-art-gwent gallery-slide"><span class="gallery-mark">◇</span><span class="gallery-caption">/ 03 — INTERFEJS</span></div>
+                        <div class="gallery-controls"><button type="button" data-prev aria-label="Poprzednie zdjęcie">←</button><span data-counter>01 / 03</span><button type="button" data-next aria-label="Następne zdjęcie">→</button></div>
+                        <div class="gallery-thumbs"><button class="gallery-thumb active" data-slide="0">01 <span>Koncepcja</span></button><button class="gallery-thumb" data-slide="1">02 <span>Mechaniki</span></button><button class="gallery-thumb" data-slide="2">03 <span>Interfejs</span></button></div>
+                    </div>
+                    <div class="project-copy"><span class="project-index">PROJEKT 02 / W TRAKCIE</span><h3>Gwint - Comming soon</h3><p>Comming soon</p>
+                        <div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Flask</span></div>
+                        <a class="project-link" href="http://127.0.0.1:5000" target="_blank" rel="noopener noreferrer">Otwórz projekt <span>↗</span></a>
+                        <p class="project-note">Comming soon</p></div>
+                </article>
+
+                <article id="project-next" class="project-detail glass">
+                    <div class="project-gallery" data-gallery>
+                        <div class="gallery-main project-art project-art-next gallery-slide is-active"><span class="gallery-mark">＋</span><span class="gallery-caption">KOLEJNY PROJEKT / WKRÓTCE</span></div>
+                        <div class="gallery-main project-art project-art-next gallery-slide"><span class="gallery-mark">✦</span><span class="gallery-caption">NOWY POMYSŁ</span></div>
+                        <div class="gallery-main project-art project-art-next gallery-slide"><span class="gallery-mark">⌘</span><span class="gallery-caption">W TRAKCIE TWORZENIA</span></div>
+                        <div class="gallery-controls"><button type="button" data-prev aria-label="Poprzednie zdjęcie">←</button><span data-counter>01 / 03</span><button type="button" data-next aria-label="Następne zdjęcie">→</button></div>
+                        <div class="gallery-thumbs"><button class="gallery-thumb active" data-slide="0">01 <span>Zapowiedź</span></button><button class="gallery-thumb" data-slide="1">02 <span>Pomysł</span></button><button class="gallery-thumb" data-slide="2">03 <span>W budowie</span></button></div>
+                    </div>
+                    <div class="project-copy"><span class="project-index">PROJEKT 03 / WKRÓTCE</span><h3>Kolejny projekt</h3><p>Comming soon</p><div class="tech-list"><span>Do ustalenia</span><span>Eksperyment</span></div></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Masz pomysł? <span class="gradient-text">Porozmawiajmy</span>
+                </h2>
+                <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+                    Jeśli chcesz pogadać o projektach albo podzielić się pomysłem, odezwij się.
+                </p>
+                <a href="mailto:"
+                    class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all hover:scale-105 shadow-lg shadow-indigo-500/20 mb-12">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    Napisz do mnie
+                </a>
+
+                <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-slate-500 text-sm">© 2026 kelly_q3. </p>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Navbar Scrolled State
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass', 'shadow-lg');
+            } else {
+                navbar.classList.remove('glass', 'shadow-lg');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.querySelector('button[aria-controls="mobile-menu"]');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+            btn.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('hidden');
+        });
+
+        // Osobna galeria dla każdego projektu: strzałki i miniatury.
+        document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+            const slides = [...gallery.querySelectorAll('.gallery-slide')];
+            const thumbs = [...gallery.querySelectorAll('.gallery-thumb')];
+            const counter = gallery.querySelector('[data-counter]');
+            let current = 0;
+            const show = (index) => {
+                current = (index + slides.length) % slides.length;
+                slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+                thumbs.forEach((thumb, i) => thumb.classList.toggle('active', i === current));
+                counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            };
+            gallery.querySelector('[data-prev]').addEventListener('click', () => show(current - 1));
+            gallery.querySelector('[data-next]').addEventListener('click', () => show(current + 1));
+            thumbs.forEach((thumb) => thumb.addEventListener('click', () => show(Number(thumb.dataset.slide))));
+        });
+    </script>
+</body>
+
+</html>
